@@ -26,7 +26,19 @@
       z-index: 999;
     }
   </style>
-</head>
+</head><audio id="bg-music" loop muted>
+  <source src="MAHALINI_-_KISAH_SEMPURNA_OFFICIAL_MUSIC_VIDEO_(128k).m4a" type="audio/m4a">
+</audio>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    const a = document.getElementById('bg-music');
+    window.addEventListener('scroll', function(){
+      a.play().catch(()=>{});
+      a.muted = false;
+    }, {once:true});
+  });
+</script>
+
 <body>
 
   <audio id="bg-music" <audio autoplay loop muted oncanplay="this.muted=false;">
