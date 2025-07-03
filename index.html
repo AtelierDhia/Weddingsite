@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Andy & Bunga's Wedding</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #F7F5F2;
+      font-family: 'Lora', serif;
+    }
+    img {
+      width: 100%;
+      display: block;
+    }
+    #music-control {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #0A3F21;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 30px;
+      font-size: 14px;
+      cursor: pointer;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="bg-music" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+
+  <div id="music-control" onclick="toggleMusic()">⏸ Pause Music</div>
+
+  <img src="your-design.jpg" alt="Wedding Design">
+
+  <script>
+    const music = document.getElementById("bg-music");
+    const control = document.getElementById("music-control");
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        control.innerText = "⏸ Pause Music";
+      } else {
+        music.pause();
+        control.innerText = "▶️ Play Music";
+      }
+    }
+  </script>
+
+</body>
+</html>
+
